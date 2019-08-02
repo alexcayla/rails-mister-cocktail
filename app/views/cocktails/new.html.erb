@@ -1,0 +1,17 @@
+<%= render 'shared/navbar' %>
+
+<div class="container">
+  <div class="col-lg-8 mx-auto">
+  <h1 class="py-4">Add new cocktail</h1>
+
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <%= f.button :submit, class: 'btn btn-primary my-3' %>
+      <%= link_to "Back to cocktails", root_path %>
+    </div>
+  <% end %>
+
+</div>
+</div>

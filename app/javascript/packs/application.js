@@ -15,4 +15,24 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+import 'bootstrap';
+
+// Toggle visibility of links
+const editCocktail = document.querySelector('#edit-cocktail');
+const doseLink = document.querySelectorAll('.delete-dose')
+const addIngredientLink = document.querySelector('.add-ingredient')
+const deleteCocktailLink = document.querySelector('.delete-cocktail')
+
+const toggleText = () => {
+  if (addIngredientLink.classList.contains('link_invisible')){
+    editCocktail.textContent = 'Done';
+  }
+    editCocktail.textContent = 'Edit';
+}
+
+editCocktail && editCocktail.addEventListener('click', () => {
+  doseLink.forEach((link) => link.classList.toggle('link_invisible'),
+  addIngredientLink.classList.toggle('link_invisible'),
+  deleteCocktailLink.classList.toggle('link_invisible'), toggleText()
+  )
+})
