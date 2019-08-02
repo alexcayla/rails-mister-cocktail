@@ -26,7 +26,9 @@
       <% end %>
     </ul>
 
-<%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
+<% if @cocktail.photo? == true %>
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+<% end %>
 
 
 
