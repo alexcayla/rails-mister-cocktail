@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
 
 <div class="container">
-  <div class="col-lg-8 mx-auto">
+  <div class="col-lg-8 mx-auto my-3">
     <div class="d-flex align-items-center">
       <h1><%= @cocktail.name %></h1>
       <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-cocktail link_invisible' %>

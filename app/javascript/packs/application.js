@@ -19,20 +19,24 @@ import 'bootstrap';
 
 // Toggle visibility of links
 const editCocktail = document.querySelector('#edit-cocktail');
+
 const doseLink = document.querySelectorAll('.delete-dose')
+
 const addIngredientLink = document.querySelector('.add-ingredient')
 const deleteCocktailLink = document.querySelector('.delete-cocktail')
 
 const toggleText = () => {
   if (addIngredientLink.classList.contains('link_invisible')){
-    editCocktail.textContent = 'Done';
+    return editCocktail.textContent = 'Edit';
   }
-    editCocktail.textContent = 'Edit';
+    return editCocktail.textContent = 'Done';
 }
 
 editCocktail && editCocktail.addEventListener('click', () => {
-  doseLink.forEach((link) => link.classList.toggle('link_invisible'),
-  addIngredientLink.classList.toggle('link_invisible'),
-  deleteCocktailLink.classList.toggle('link_invisible'), toggleText()
-  )
+  doseLink.forEach((link) => link.classList.toggle('link_invisible'));
+  addIngredientLink.classList.toggle('link_invisible');
+  deleteCocktailLink.classList.toggle('link_invisible');
+  toggleText();
 })
+
+toggleText();
